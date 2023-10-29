@@ -15,9 +15,8 @@ input:focus-within {
 }
 
 p.results_text {
-  display: block;
   font-size: 1.3em;
-  margin-inline: auto;
+  margin-inline: .5rem;
   font-weight: bold;
 }
 
