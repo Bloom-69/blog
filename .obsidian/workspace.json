@@ -1,0 +1,162 @@
+{
+  "main": {
+    "id": "88740f6840f30358",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e59e872490df0cb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a8c4125600eac717",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "src/content/blog/backup4tsc.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "004b60cf475322fb",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3fc0fb6a753f807",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d3dbc38ea2328a6d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f7d3324b24a7840d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "36fc59db18255bad",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "06aee06c7d948eca",
+    "type": "split",
+    "children": [
+      {
+        "id": "9d7d5ca1ec971c0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f025af6d4e58d814",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "src/content/blog/backup4tsc.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8534f9676b37fdbd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "src/content/blog/backup4tsc.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "32c1e3d867f6d2c5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "6bd676b5909fa2f7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "src/content/blog/backup4tsc.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a8c4125600eac717",
+  "lastOpenFiles": [
+    "src/content/blog/first-post.md",
+    "src/content/blog/magnetite-update.md",
+    "src/content/blog/backup4tsc.md",
+    "public/RefreshedSettings.jpeg",
+    "public/ImprovedLogin.jpeg",
+    "public/Backup4Tsc.png",
+    "MagnetiteUpdate.md",
+    "magnetite-update.md",
+    "template.md",
+    "Test Post.md"
+  ]
+}

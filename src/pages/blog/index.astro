@@ -1,0 +1,140 @@
+---
+import BaseHead from "../../components/layouts/BaseHead.astro";
+import Header from "../../components/layouts/Header.astro";
+import Footer from "../../components/layouts/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/layouts/FormattedDate.astro";
+import Search from "../../components/search";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() + b.data.pubDate.valueOf()
+);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 860px;
+      }
+      div.card {
+        transition: box-shadow 300ms ease;
+        background-color: rgb(var(--gray-light));
+        padding: 0.8rem;
+        width: 100%;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+        border: 0.1rem solid rgb(var(--gray));
+        border-radius: 1rem;
+        text-align: center;
+        box-shadow: none;
+      }
+
+      div.card:hover {
+        border-color: #04a5e5;
+      }
+      div.card:first-child {
+        width: 100%;
+        margin-top: none;
+      }
+      div.card:first-child img {
+        width: 100%;
+      }
+      div.card:first-child .title {
+        font-size: 2.369rem;
+      }
+      div.card img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+      }
+      div.card a {
+        display: block;
+		text-decoration: none;
+      }
+      .title {
+        margin: 0;
+        color: #4c4f69;
+        line-height: 1;
+      }
+      .date {
+        margin: 0;
+        color: #6c6f85;
+      }
+
+	  section {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-items: center;
+		align-items: center;
+	  }
+
+      @media (prefers-color-scheme: dark) {
+        div.card {
+          transition: border 300ms ease;
+          background-color: #313244;
+          border-color: #6c7086;
+        }
+
+        div.card:hover {
+          box-shadow: none;
+          border-color: #89dceb;
+        }
+
+        .title {
+          color: #cdd6f4;
+        }
+
+        .date {
+          color: #a6adc8;
+        }
+      }
+      @media (max-width: 820px) {
+		main {
+			width: 580px;
+		}
+        div.card {
+          width: calc(100% - 30%);
+          text-align: center;
+        }
+        div.card:first-child {
+          margin-bottom: 0;
+        }
+        div.card:first-child .title {
+          font-size: 1.563em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <Search client:load searchList={posts} />
+          {
+            posts.map((post) => (
+              <div class="card">
+                <a href={`/blog/${post.slug}/`}>
+                  {post.data.heroImage && (
+                    <img
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt=""
+                    />
+                  )}
+                  <h4 class="title">{post.data.title}</h4>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate} />
+                  </p>
+                </a>
+              </div>
+            ))
+          }
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
