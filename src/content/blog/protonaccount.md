@@ -4,7 +4,6 @@ description: Having multiple email and email apps is a bad idea
 heroImage: /ProtonMail.png
 pubDate: Dec 11 2023
 ---
-> NOTE: Currently, this post has the wrong `heroImage`, since I’m writing in my iPad. The `heroImage` will get updated as soon I make one.
 
 Hello everyone, while I’ve been 2 months after the last post was released, so today I’ve done migrating 3 email into a single **Proton account and email**, for **piracy sake**. So yeah, this one did a successful move, but I probably buy a subscription to upgrade for a bit. But now here’s how I managed these 3 emails into one.
 
