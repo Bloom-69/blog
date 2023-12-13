@@ -1,7 +1,6 @@
 ---
 import BaseHead from "../components/layouts/BaseHead.astro";
 import Header from "../components/layouts/Header.astro";
-import Footer from "../components/layouts/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -9,113 +8,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <script lang="javascript">
-    const quotes = [
-      {
-        text: "Hello World!",
-      },
-      {
-        text: "Also check at Amy's Blog!",
-      },
-      {
-        text: "We do a little trolling",
-      },
-      {
-        text: "meow :3",
-      },
-      {
-        text: "Also try Trackmania Nations Forever!",
-      },
-      {
-        text: "Made with Astro!",
-      },
-      {
-        text: "Alexa, play Despacito",
-      },
-      {
-        text: "This is fine 🔥",
-      },
-      {
-        text: "UwU",
-      },
-      {
-        text: "OwO",
-      },
-      {
-        text: "window is not a function",
-      },
-      {
-        text: "Microsoft Paint has Layer!",
-      },
-      {
-        text: "Gonna be honest guys. TSC sucks.",
-      },
-      {
-        text: "Respirez and L_NeLL6 is a femboy, sorry about it. 😑",
-      },
-      {
-        text: "sudo rm -rf /",
-      },
-      {
-        text: "Created with ThinkPad T14 Gen 1!",
-      },
-      {
-        text: "Made by Bloom (she bit sleepy)",
-      },
-      {
-        text: "Windows Copilot is a AI feature but some people doesn't want it",
-      },
-      {
-        text: "Google I/O 2023 was full of AIs...",
-      },
-      {
-        text: "These are 25+ splash screen texts in total!",
-      },
-      {
-        text: "Respirez hates cats",
-      },
-      {
-        text: "Figma is nice, but... WHY ADOBE WANTS IT????",
-      },
-      {
-        text: "My OneDrive's images folder has full of furry pictures",
-      },
-      {
-        text: "1,358 message was deleted by a single mistake when setting the filter on Thunderbird",
-      },
-      {
-        text: "12.72 World Record in a nosebug and uberbug map! (Already 2 year!)",
-      },
-      {
-        text: "Looks like I ran out of ideas ;-;",
-      },
-      {
-        text: "Roblox try to don't crash their server (Impossible)",
-      },
-      {
-        text: "Vesktop and Vencord is cool (and cute :3)",
-      },
-      {
-        text: "Powered by helix!"
-      },
-    ];
-
-    function genSplashScreen() {
-      var arrIdx = Math.floor(Math.random() * quotes.length);
-      document.getElementById("splash_screen").innerHTML =
-        quotes[arrIdx].text;
-    }
-
-    document.addEventListener("DOMContentLoaded", genSplashScreen);
-    </script>
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main>
+    <main transition:animate="slide">
       <h1 class="title">Welcome to my Blog!</h1>
-      <p class="splash" title="This is a splash screen. If you reload the page, it will change it" id="splash_screen">loading...</span>
+      <p>Use the Navigation Rail/Bar to navigate</p>
     </main>
-    <Footer />
     <style>
       h1.title {
         text-align: center;

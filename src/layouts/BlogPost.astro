@@ -2,7 +2,6 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/layouts/BaseHead.astro';
 import Header from '../components/layouts/Header.astro';
-import Footer from '../components/layouts/Footer.astro';
 import FormattedDate from '../components/layouts/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -15,25 +14,24 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
+				width: 100vw;
 				max-width: 100%;
 				margin: 0;
+				padding-inline: 0;
+				padding-top: 0;
 			}
 			.hero-image {
 				width: 100%;
 			}
 			.hero-image img {
 				display: block;
-				margin: 1rem auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
 			}
 			.prose {
 				width: 820px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
+				color: color-mix(in srgb, black 90%, var(--accent) 10%);
 			}
 			.title {
 				margin-bottom: 1em;
@@ -53,7 +51,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 
 			h4.quote{
-				color: rgb(var(--gray-quote));
+				color: color-mix(in srgb, black 60%, var(--accent) 20%);
 			}
 
 			@media (prefers-color-scheme: dark) {
@@ -62,15 +60,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				}
 
 				.prose {
-					color: #cdd6f4;
+					color: color-mix(in srgb, white 90%, var(--accent) 10%);
 				}
 
 				.date {
-					color: #a6adc8;
+					color: color-mix(in srgb, white 90%, var(--accent) 10%);
 				}
 
 				h4.quote {
-					color: #bac2de;
+					color: color-mix(in srgb, white 60%, var(--accent) 20%);
 				}
 			}
 		</style>
@@ -103,6 +101,5 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 			</article>
 		</main>
-		<Footer />
 	</body>
 </html>

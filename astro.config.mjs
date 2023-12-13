@@ -3,12 +3,12 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import react from "@astrojs/react";
 
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bloom-blog.vercel.app',
   integrations: [mdx(), sitemap(), react()],
-  output: "static",
+  output: "server",
   adapter: vercel()
 });
