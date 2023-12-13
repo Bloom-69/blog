@@ -28,7 +28,6 @@ body {
 
 main {
   flex-grow: 1;
-  padding-inline: 1rem;
   padding-bottom: 1rem;
 }
 

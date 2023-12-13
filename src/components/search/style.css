@@ -2,7 +2,7 @@
 
 input.search {
   transition: 300ms all ease;
-  width: 100%;
+  width: 97%;
   padding: 0.5rem;
   margin-top: 1rem;
   background-color: color-mix(in srgb, white 70%, var(--accent) 15%);

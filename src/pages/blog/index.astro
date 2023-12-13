@@ -16,6 +16,9 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
+      section {
+        padding: 1rem;
+      }
       main {
         display: flex;
         flex-direction: column;
@@ -87,31 +90,33 @@ const posts = (await getCollection("blog")).sort(
   <body>
     <Header />
     <main>
-      <Search client:load searchList={posts} />
-      <div class="grid-container">
-        {
-          posts.map((post) => (
-            <div class="card">
-              <a astro:data-reload href={`/blog/${post.slug}/`}>
-                <div class="content">
-                  {post.data.heroImage && (
-                    <img
-                      width={720}
-                      height={360}
-                      src={post.data.heroImage}
-                      alt=""
-                    />
-                  )}
-                  <h4 class="title">{post.data.title}</h4>
-                  <p class="date">
-                    <FormattedDate date={post.data.pubDate} />
-                  </p>
-                </div>
-              </a>
-            </div>
-          ))
-        }
-      </div>
+      <section>
+        <Search client:load searchList={posts} />
+        <div class="grid-container">
+          {
+            posts.map((post) => (
+              <div class="card">
+                <a astro:data-reload href={`/blog/${post.slug}/`}>
+                  <div class="content">
+                    {post.data.heroImage && (
+                      <img
+                        width={720}
+                        height={360}
+                        src={post.data.heroImage}
+                        alt=""
+                      />
+                    )}
+                    <h4 class="title">{post.data.title}</h4>
+                    <p class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </p>
+                  </div>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </section>
     </main>
   </body>
 </html>
