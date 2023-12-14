@@ -17,7 +17,8 @@ export default defineConfig({
       VitePWA({
         manifest: {
           name: 'Bloom Blog',
-          short_name: 'Bloom Blog',
+          short_name: 'Bloom',
+          injectRegister: 'auto',
           icons: [
             {
               src: '/pwa/icons/192.png',
