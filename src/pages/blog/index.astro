@@ -34,19 +34,20 @@ const posts = (await getCollection("blog")).sort(
         align-content: center;
       }
       div.card {
-        background-color: color-mix(in srgb, white 90%, var(--accent) 10%);
+        background-color: color-mix(in srgb, white 90%, var(--accent) 30%);
         max-width: 720px;
         width: 100%;
         height: 100%;
-        border-radius: 16px;
-        box-shadow:
-          0 1px 2px 0 rgba(0, 0, 0, 0.05),
-          0 2px 6px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem;
         overflow: hidden;
         display: flex;
         flex-direction: column;
         gap: 16px;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out, border-radius 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      div.card:hover {
+        border-radius: 2rem;
       }
 
       div.content {
@@ -59,12 +60,12 @@ const posts = (await getCollection("blog")).sort(
       }
       .title {
         margin: 0;
-        color: #4c4f69;
+        color: color-mix(in srgb, black 90%, var(--accent) 10%);
         line-height: 1;
       }
       .date {
         margin: 0;
-        color: #6c6f85;
+        color: color-mix(in srgb, black 80%, var(--accent) 20%);
       }
 
       @media (prefers-color-scheme: dark) {
