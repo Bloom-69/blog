@@ -28,7 +28,21 @@ body {
 
 main {
   flex-grow: 1;
+  width: 100%;
+  padding: 0;
   padding-bottom: 1rem;
+  animation: openingAnimation .5s cubic-bezier(.165, .84, .44, 1) forwards;
+}
+
+@keyframes openingAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1,
