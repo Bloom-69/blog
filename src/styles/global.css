@@ -148,10 +148,12 @@ pre > code {
 }
 
 blockquote {
-  border-left: 4px solid var(--accent);
-  padding: 0 0 0 20px;
-  margin: 0px;
-  font-size: 1.333em;
+  background-color: color-mix(in srgb, white 70%, var(--accent) 15%);
+  text-align: center;
+  border-radius: 8px;
+  font-style: italic;
+  box-shadow: 0 0 0 2px color-mix(in srgb, white 70%, var(--accent) 50%);
+  font-size: 1.25em;
 }
 
 hr {
