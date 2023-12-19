@@ -27,10 +27,25 @@ body {
   line-height: 1.7;
 }
 
+body {
+  width: 100%;
+  flex-direction: row;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@media (max-width: 940px) {
+  body {
+    flex-direction: column;
+  }
+}
+
 main {
   flex-grow: 1;
-  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   padding: 0;
+  padding-inline: 1rem;
   padding-bottom: 1rem;
   animation: openingAnimation .5s cubic-bezier(.165, .84, .44, 1) forwards;
 }
@@ -147,10 +162,6 @@ hr {
 @media (max-width: 720px) {
   body {
     font-size: 18px;
-  }
-
-  main {
-    padding: 1em;
   }
 }
 

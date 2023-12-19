@@ -16,8 +16,10 @@ const posts = (await getCollection("blog")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
-      section {
-        padding: 1rem;
+      @media (max-width: 940px) {
+        section {
+          padding-bottom: 1rem;
+        }
       }
       main {
         display: flex;
