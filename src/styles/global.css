@@ -152,8 +152,9 @@ blockquote {
   text-align: center;
   border-radius: 8px;
   font-style: italic;
+  padding: 2px 5px;
   box-shadow: 0 0 0 2px color-mix(in srgb, white 70%, var(--accent) 50%);
-  font-size: 1.25em;
+  font-size: 20px;
 }
 
 hr {
