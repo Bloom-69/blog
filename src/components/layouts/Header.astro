@@ -37,6 +37,18 @@ import HeaderLink from "./HeaderLink.astro";
       </a>
          Repo
       </div>
+      <div class="text">
+        <a href="https://mastodon.social/@bloom69" target="_blank">
+          <span class="material-symbols-outlined">person</span>
+        </a>
+           Mastodon
+        </div>
+      <div class="text">
+        <a data-astro-reload href="/rss.xml">
+          <span class="material-symbols-outlined">rss_feed</span>
+        </a>
+           RSS
+        </div>
     </div>
   </nav>
 </header>
@@ -100,10 +112,11 @@ import HeaderLink from "./HeaderLink.astro";
     justify-content: space-around;
     gap: 0.3rem;
   }
-  .social-links,
-  .social-links a {
+  .social-links {
     margin-top: 1rem;
     display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
   }
 
   @media (prefers-color-scheme: dark) {
