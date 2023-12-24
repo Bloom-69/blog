@@ -5,30 +5,36 @@ import HeaderLink from "./HeaderLink.astro";
 <header>
   <nav>
     <div class="internal-links">
-      <div class="text">
+      <div class="link">
         <HeaderLink href="/">
           <span class="material-symbols-outlined">home</span>
         </HeaderLink>
-         Home
+        <div class="text">
+          Home
+        </div>
       </div>
-      <div class="text">
+      <div class="link">
         <HeaderLink href="/blog">
           <span class="material-symbols-outlined">article</span>
         </HeaderLink>
-         Posts
+        <div class="text">
+          Posts
+        </div>
       </div>
-      <div class="text">
+      <div class="link">
         <HeaderLink href="/about">
           <span class="material-symbols-outlined">info</span>
         </HeaderLink>
-         About
+        <div class="text">
+          About
+        </div>
       </div>
     </div>
     <div class="social-links">
       <div class="text">
-        <a href="https://github.com/bloom-69/blog" target="_blank">
-          <span class="material-symbols-outlined">code</span>
-        </a>
+      <a href="https://github.com/bloom-69/blog" target="_blank">
+        <span class="material-symbols-outlined">code</span>
+      </a>
          Repo
       </div>
     </div>
@@ -110,6 +116,8 @@ import HeaderLink from "./HeaderLink.astro";
       color: color-mix(in srgb, white 90%, var(--accent) 10%);
     }
   }
+
+  /* Navigation Bar */
   @media (max-width: 940px) {
     header {
       max-width: 100%;
@@ -120,7 +128,7 @@ import HeaderLink from "./HeaderLink.astro";
       left: 0;
       width: 100%;
       height: 4.5rem;
-      z-index: 1000;
+      z-index: 100;
       flex-direction: row;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     }
@@ -133,6 +141,23 @@ import HeaderLink from "./HeaderLink.astro";
       align-items: center;
       width: 100%;
       gap: 2rem;
+    }
+
+    a {
+      transition: all 0.3s ease;
+    }
+
+    a:not(.active) {
+      position: relative;
+      transform: translateY(5px);
+    }
+
+    a:not(.active) ~ .text {
+      opacity: 0;
+    }
+
+    a.active .text {
+      opacity: 1;
     }
 
     .social-links,

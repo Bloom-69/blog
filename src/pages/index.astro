@@ -10,6 +10,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
       .hero-image {
+        transition: all 300ms ease;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -17,11 +18,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         padding: 1rem;
         margin-top: 1rem;
         margin-inline: auto;
-        background-image: url("/heroHome.png");
         background-size: cover;
         width: 90%;
         gap: 1rem;
-        background-color: color-mix(in srgb, white 90%, var(--accent) 10%);
+        background-color: color-mix(in srgb, white 90%, var(--accent) 50%);
         color: color-mix(in srgb, black 90%, var(--accent) 10%);
         border-radius: 1rem;
       }
@@ -52,12 +52,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       a button:hover {
         background-color: color-mix(in srgb, black 50%, var(--accent) 25%);
       }
+
+      @media (prefers-color-scheme: dark) {
+        .hero-image {
+          background-color: color-mix(in srgb, black 50%, var(--accent) 35%);
+          color: color-mix(in srgb, white 90%, var(--accent) 10%);
+        }
+        .hero-image h1 {
+          color: color-mix(in srgb, white 90%, var(--accent) 10%);
+        }
+        a button {
+          background-color: color-mix(in srgb, black 50%, var(--accent) 60%);
+          color: color-mix(in srgb, white 70%, var(--accent) 35%);
+        }
+        }
+      }
     </style>
   </head>
   <body>
     <Header title={SITE_TITLE} />
-    <main>
-      <div class="hero-image">
+    <main transition:animate="fade">
+      <div data-background-image="/heroHome.png" class="hero-image">
         <h1>Welcome to my Blog!</h1>
         <p>Use the Navigation Rail/Bar to navigate or press this button:</p>
         <a href="/blog"><button><span class="material-symbols-outlined">article</span>View Posts</button></a>

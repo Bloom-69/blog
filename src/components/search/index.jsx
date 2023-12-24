@@ -25,36 +25,28 @@ export default function Search({ searchList }) {
 
   return (
     <>
-      <div className="container">
-        <input
-          className="search"
-          type="text"
-          onChange={handleOnSearch}
-          placeholder="Search Post"
-        />
-        <div className="results">
-          {query.length > 0 && (
-            <>
-              <div>
-                <p className="results_text">
-                  Searched {posts.length}{" "}
-                  {posts.length === 1 ? "result" : "results"} on '{query}'
-                </p>
-              </div>
-              <div className="grid">
-                {posts &&
-                  posts.map((post) => (
-                    <a className="results_link" href={`/blog/${post.slug}/`}>
-                      <div className="results_list">
-                        <h1>{post.data.title}</h1>
-                        <p>{post.data.description}</p>
-                      </div>
-                    </a>
-                  ))}
-              </div>
-            </>
-          )}
-        </div>
+      <input
+        className={`search ${query.length >> 0 ? "active" : ""}`}
+        type="text"
+        onChange={handleOnSearch}
+        placeholder="Search Post"
+      />
+      <div className={`${query.length > 0 ? "results" : ""}`}>
+        {query.length > 0 && (
+          <>
+            <div className="grid">
+              {posts &&
+                posts.map((post) => (
+                  <a className="results_link" href={`/blog/${post.slug}/`}>
+                    <div className="results_list">
+                      <h1>{post.data.title}</h1>
+                      <p>{post.data.description}</p>
+                    </div>
+                  </a>
+                ))}
+            </div>
+          </>
+        )}
       </div>
     </>
   );

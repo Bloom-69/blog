@@ -52,6 +52,15 @@ const posts = (await getCollection("blog")).sort(
         border-radius: 2rem;
       }
 
+      div.card img {
+        transition: border-radius .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: .7rem .7rem .5rem .5rem;
+      }
+
+      div.card:hover img {
+          border-radius: 1.3rem 1.3rem .5rem .5rem;
+      }
+
       div.content {
         padding: 16px;
       }
@@ -92,7 +101,7 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Header />
-    <main>
+    <main transition:animate="fade">
       <section>
         <Search client:load searchList={posts} />
         <div class="grid-container">
@@ -103,10 +112,13 @@ const posts = (await getCollection("blog")).sort(
                   <div class="content">
                     {post.data.heroImage && (
                       <img
+                        loading="lazy"
+                        data-background-image={post.data.heroImage}
                         width={720}
                         height={360}
                         src={post.data.heroImage}
-                        alt=""
+                        alt={post.data.description}
+                        title={post.data.title}
                       />
                     )}
                     <h4 class="title">{post.data.title}</h4>
