@@ -176,7 +176,8 @@ hr {
   }
 
   blockquote {
-    border-left-color: var(--accent);
+    border-color: var(--accent);
+    background-color: color-mix(in srgb, black 70%, var(--accent) 35%);
   }
 
   code {
