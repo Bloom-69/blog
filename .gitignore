@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# How could .vercel get into github? :/
+.vercel/
+
 # dependencies
 node_modules/
 
