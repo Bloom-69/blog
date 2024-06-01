@@ -1,0 +1,75 @@
+---
+import "./style.css";
+---
+
+<script is:inline>
+    document.addEventListener("astro:page-load", () => {
+        let isOpen = false;
+        const modal_base = document.getElementById("modal-base");
+        const btn_open_modal = document.getElementById("btn-open-modal");
+        const close_modal = document.getElementById("close-modal");
+
+        function saveToLocalStorage(k, v) {
+            window.localStorage.setItem(k, v);
+        }
+
+        function getLocalStorage(k) {
+            window.localStorage.getItem(k);
+        }
+
+        btn_open_modal.addEventListener("click", () => {
+            if (isOpen === true) {
+                modal_base.className = "modal-base hide";
+            } else {
+                modal_base.className = "modal-base";
+            }
+
+            isOpen = true;
+        });
+
+        close_modal.addEventListener("click", () => {
+            isOpen = false;
+            modal_base.className = "modal-base hide";
+        });
+    });
+</script>
+
+<div class="button-text">
+    <button id="btn-open-modal" class="modal-button">
+        <span class="material-symbols-outlined">settings</span>
+    </button>
+    Settings
+</div>
+
+<div class="modal-base hide" id="modal-base">
+    <div class="modal-backdrop" id="backdrop">
+        <div class="setting-modal">
+            <div class="toolbar">
+                <h1>Settings</h1>
+                <button id="close-modal"
+                    ><span class="material-symbols-outlined">close</span
+                    ></button
+                >
+            </div>
+            <div class="settings-container">
+                <h1>Note</h1>
+                <p>This feature is in Work in Progress, currently there's no functionality yet. Will be added soon</p>
+                <h1>Themes</h1>
+                <div class="theme-selection">
+                    <h2>Colors</h2>
+                    <div class="themes-colors">
+                        <button class="theme-s-default"></button>
+                        <button class="theme-s-blue"></button>
+                    </div>
+
+                    <h2>Color Constrast</h2>
+                    <div class="color-constrasts">
+                        <button class="btn primary">Default</button>
+                        <button class="btn mc">Medium</button>
+                        <button class="btn hc">High</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

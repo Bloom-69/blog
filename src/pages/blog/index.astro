@@ -7,7 +7,7 @@ import FormattedDate from "../../components/layouts/FormattedDate.astro";
 import Search from "../../components/search";
 
 const posts = (await getCollection("blog")).sort(
-  (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a: any, b: any) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -36,7 +36,7 @@ const posts = (await getCollection("blog")).sort(
         align-content: center;
       }
       div.card {
-        background-color: color-mix(in srgb, white 90%, var(--accent) 30%);
+        background-color: var(--md-sys-color-surface-container);
         max-width: 720px;
         width: 100%;
         height: 100%;
@@ -45,27 +45,30 @@ const posts = (await getCollection("blog")).sort(
         display: flex;
         flex-direction: column;
         gap: 16px;
-        transition: transform 0.2s ease-in-out, border-radius 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition:
+          background 0.3s ease,
+          border-radius 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
 
       div.card:hover {
         border-radius: 2rem;
+        background-color: var(--md-sys-color-surface-container-highest);
       }
 
       div.card img {
-        transition: border-radius .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        border-radius: .7rem .7rem .5rem .5rem;
+        transition: border-radius 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border-radius: 0.7rem 0.7rem 0.5rem 0.5rem;
       }
 
       div.card:hover img {
-          border-radius: 1.3rem 1.3rem .5rem .5rem;
+        border-radius: 1.3rem 1.3rem 0.5rem 0.5rem;
       }
 
       div.content {
         padding: 16px;
       }
 
-      div.card a {
+      a {
         display: block;
         text-decoration: none;
       }
@@ -78,25 +81,6 @@ const posts = (await getCollection("blog")).sort(
         margin: 0;
         color: color-mix(in srgb, black 80%, var(--accent) 20%);
       }
-
-      @media (prefers-color-scheme: dark) {
-        div.card {
-          background-color: color-mix(in srgb, black 50%, var(--accent) 35%);
-        }
-
-        div.card:hover {
-          box-shadow: none;
-          border-color: color-mix(in srgb, black 80%, var(--accent) 40%);
-        }
-
-        .title {
-          color: color-mix(in srgb, white 90%, var(--accent) 10%);
-        }
-
-        .date {
-          color: color-mix(in srgb, white 80%, var(--accent) 20%);
-        }
-      }
     </style>
   </head>
   <body>
@@ -107,8 +91,8 @@ const posts = (await getCollection("blog")).sort(
         <div class="grid-container">
           {
             posts.map((post) => (
-              <div class="card">
-                <a astro:data-reload href={`/blog/${post.slug}/`}>
+              <a astro:data-reload href={`/blog/${post.slug}/`}>
+                <div class="card">
                   <div class="content">
                     {post.data.heroImage && (
                       <img
@@ -126,8 +110,8 @@ const posts = (await getCollection("blog")).sort(
                       <FormattedDate date={post.data.pubDate} />
                     </p>
                   </div>
-                </a>
-              </div>
+                </div>
+              </a>
             ))
           }
         </div>

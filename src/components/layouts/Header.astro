@@ -1,5 +1,6 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import Modal from "../../components/settings/modal.astro";
 ---
 
 <header>
@@ -21,14 +22,6 @@ import HeaderLink from "./HeaderLink.astro";
           Posts
         </div>
       </div>
-      <div class="link">
-        <HeaderLink href="/about">
-          <span class="material-symbols-outlined">info</span>
-        </HeaderLink>
-        <div class="text">
-          About
-        </div>
-      </div>
     </div>
     <div class="social-links">
       <div class="text">
@@ -37,12 +30,7 @@ import HeaderLink from "./HeaderLink.astro";
       </a>
          Repo
       </div>
-      <div class="text">
-        <a href="https://mastodon.social/@bloom69" target="_blank">
-          <span class="material-symbols-outlined">post</span>
-        </a>
-           Mastodon
-        </div>
+      <Modal/>
       <div class="text">
         <a href="https://bsky.app/profile/bloom.swifties.social">
           <span class="material-symbols-outlined">post</span>
@@ -60,6 +48,7 @@ import HeaderLink from "./HeaderLink.astro";
 </header>
 <style>
   header {
+    z-index: 999999999 !important;
     display: flex;
     position: sticky;
     -webkit-user-select: none;
@@ -74,12 +63,12 @@ import HeaderLink from "./HeaderLink.astro";
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color: color-mix(in srgb, white 90%, var(--accent) 10%);
+    background-color: var(--md-sys-color-surface-container);
   }
 
   nav a {
     background-color: transparent;
-    height: 25px;
+    height: 27px;
     transition: all 300ms ease;
     font-variation-settings: "wght" 400;
     display: flex;
@@ -88,25 +77,22 @@ import HeaderLink from "./HeaderLink.astro";
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    color: var(--black);
+    color: var(--md-sys-color-on-surface-container);
     border-radius: 999px;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
   }
 
   nav a:hover {
-    background-color: color-mix(in srgb, white 30%, var(--accent) 15%);
+    background-color: var(--md-sys-color-surface-variant);
+    color: var(--md-sys-color-on-surface-variant);
     font-variation-settings: "wght" 600;
   }
 
-  nav a:active {
-    background-color: color-mix(in srgb, white 30%, var(--accent) 25%);
-    font-variation-settings: "wght" 300;
-  }
-
   nav a.active {
-    background-color: color-mix(in srgb, white 50%, var(--accent) 30%);
-    font-variation-settings: "FILL" 1, "wght" 600;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    font-variation-settings: "FILL" 1, "wght" 400;
   }
 
   nav div.text {
@@ -138,17 +124,6 @@ import HeaderLink from "./HeaderLink.astro";
     justify-content: space-around;
     align-items: center;
     gap: 0.3rem;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    header {
-      background-color: color-mix(in srgb, black 90%, var(--accent) 50%);
-    }
-    
-    nav a.active {
-      background-color: color-mix(in srgb, black 5%, var(--accent) 50%);
-      color: color-mix(in srgb, white 90%, var(--accent) 10%);
-    }
   }
 
   /* Navigation Bar */

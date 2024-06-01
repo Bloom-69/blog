@@ -1,0 +1,173 @@
+div.button-text {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+button.modal-button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    height: 27px;
+    transition: all 300ms ease;
+    font-variation-settings: "wght" 400;
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    color: var(--md-sys-color-on-surface);
+    border-radius: 999px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+button.modal-button:hover {
+    background-color: var(--md-sys-color-surface-variant);
+    font-variation-settings: "wght" 600;
+}
+
+button#close-modal {
+    transition: background 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--md-sys-color-on-surface-container);
+    width: 44px;
+    height: 44px;
+    padding: .3rem;
+    border: none;
+    border-radius: 999px;
+}
+
+button#close-modal:hover {
+    background-color: var(--md-sys-color-surface-container-highest);
+}
+
+.modal-base {
+    position: relative;
+}
+
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .4);
+}
+.setting-modal > * {
+    margin-top: 1rem;
+    color: var(--md-sys-color-on-surface-container);
+}
+
+.setting-modal > *:first-child {
+    margin-top: 0;
+}
+
+.setting-modal {
+    width: 100%;
+    max-width: calc(100vw / 2);
+    max-height: calc(100vh / 2);
+
+    overflow: auto;
+    background-color: var(--md-sys-color-surface-container);
+    border-radius: 18px;
+}
+
+.settings-container {
+    padding: 1rem;
+}
+
+.setting-modal::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+}
+
+.setting-modal h1 {
+    font-size: 1.5em;
+}
+
+.setting-modal h2 {
+    font-size: 1.2em;
+}
+
+.toolbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 3rem;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+    background-color: var(--md-sys-color-surface-container);
+}
+
+.toolbar > h1 {
+    font-size: 1.5em;
+}
+
+.modal-base.hide {
+    visibility: hidden;
+}
+
+.theme-selection {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.theme-s-default {
+    background-color: rgb(142 77 48);
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 9999px;
+}
+
+.theme-s-blue {
+    background-color: rgb(33 100 135);
+    width: 54px;
+    height: 54px;
+    border: none;
+    border-radius: 9999px; 
+}
+
+.btn {
+    transition: box-shadow 300ms ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 999px;
+        cursor: pointer;
+}
+
+.btn.primary {
+    background-color: var(--md-sys-color-primary);
+}
+
+.btn.mc {
+    background-color: rgb(108 50 24);;
+}
+
+.btn.hc {
+    background-color: rgb(65 19 0);
+}
+
+.color-constrasts {
+    display: flex;
+    gap: .5rem;
+}

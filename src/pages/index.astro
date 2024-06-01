@@ -21,13 +21,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         background-size: cover;
         width: 90%;
         gap: 1rem;
-        background-color: color-mix(in srgb, white 90%, var(--accent) 50%);
-        color: color-mix(in srgb, black 90%, var(--accent) 10%);
+        background-color: var(--md-sys-color-primary-container);
+        color: var(--md-sys-color-on-primary-container);
         border-radius: 1rem;
       }
 
       .hero-image h1 {
-        color: color-mix(in srgb, black 90%, var(--accent) 10%);
+        color: var(--md-sys-color-on-primary-container);
         font-size: 3rem;
       }
 
@@ -35,37 +35,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         text-decoration: none;
       }
       a button {
+        transition: box-shadow 300ms ease;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        background-color: color-mix(in srgb, black 40%, var(--accent) 30%);
-        color: color-mix(in srgb, white 90%, var(--accent) 10%);
+        background-color: var(--md-sys-color-primary);
+        color: var(--md-sys-color-on-primary);
         border: none;
         padding: 0.5rem 1rem;
         font-size: 1rem;
         border-radius: 999px;
         cursor: pointer;
-        transition: background-color 0.2s ease-in-out;
       }
 
       a button:hover {
-        background-color: color-mix(in srgb, black 50%, var(--accent) 25%);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.5);
       }
 
-      @media (prefers-color-scheme: dark) {
-        .hero-image {
-          background-color: color-mix(in srgb, black 50%, var(--accent) 35%);
-          color: color-mix(in srgb, white 90%, var(--accent) 10%);
-        }
-        .hero-image h1 {
-          color: color-mix(in srgb, white 90%, var(--accent) 10%);
-        }
-        a button {
-          background-color: color-mix(in srgb, black 50%, var(--accent) 60%);
-          color: color-mix(in srgb, white 70%, var(--accent) 35%);
-        }
-        }
+      a button:active {
+        box-shadow: 0 1px 5px rgba(0,0,0,0.5);
       }
     </style>
   </head>

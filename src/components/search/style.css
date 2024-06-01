@@ -4,10 +4,10 @@
 input.search {
   transition: 300ms all cubic-bezier(0.075, 0.82, 0.165, 1);
   position: initial;
-  width: 98%;
+  width: 100%;
   padding: 0.5rem;
   margin-top: 1rem;
-  background-color: color-mix(in srgb, white 70%, var(--accent) 15%);
+  background-color: var(--md-sys-color-surface-container);
   border-radius: 10rem;
   border: 0;
   outline: none;
@@ -15,31 +15,12 @@ input.search {
 }
 
 input.search:hover {
-  background-color: color-mix(in srgb, white 70%, var(--accent) 25%);
+  background-color: var(--md-sys-color-surface-container);
 }
 
 input.search:focus,
 input:focus-within {
-  position: absolute;
-  margin-top: 0;
-  width: calc(100% - 1rem);
-  top: 0;
-  left: 0;
-  z-index: 110;
-  border-radius: 0;
-  background-color: color-mix(in srgb, white 70%, var(--accent) 20%);
-}
-
-input.search.active {
-  background-color: color-mix(in srgb, white 70%, var(--accent) 20%);
-  position: absolute;
-  margin-top: 0;
-  width: calc(100% - 1rem);
-  top: 0;
-  left: 0;
-  z-index: 11;
-  border-radius: 0;
-  background-color: color-mix(in srgb, white 70%, var(--accent) 20%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 div.results {
@@ -48,13 +29,9 @@ div.results {
   z-index: 100;
   width: 100%;
   display: flex;
-  height: calc(100% - 1.9rem);
   margin-top: 1.9rem;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: color-mix(in srgb, white 80%, var(--accent) 15%);
-  border-radius: 0;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 div.results_list {
@@ -64,17 +41,11 @@ div.results_list {
   flex-direction: column;
   align-items: flex-start;
   padding: 16px;
-  background-color: color-mix(in srgb, white 80%, var(--accent) 5%);
-  border-radius: 12px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: 18px;
   overflow: hidden;
   gap: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-div.results_list:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 div.results_list > h1 {
@@ -92,16 +63,12 @@ a.results_link {
 }
 
 div.grid {
-  padding-top: 0.5rem;
-  padding-inline: 0.7rem;
   overflow-y: auto;
   display: flex;
-  border-radius: 0 0 1.2rem 1.2rem;
   flex-flow: column nowrap;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   gap: 0.5rem;
-  padding-bottom: 0.5rem;
+
+  margin-bottom: .4rem;
 }
 
 div.grid::-webkit-scrollbar {
@@ -111,40 +78,5 @@ div.grid::-webkit-scrollbar {
 @media (max-width: 940px) {
   div.grid {
     padding-bottom: 5rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  input.search {
-    background-color: color-mix(in srgb, black 50%, var(--accent) 35%);
-    color: color-mix(in srgb, white 70%, var(--accent) 15%);
-  }
-
-  input.search::placeholder {
-    color: color-mix(in srgb, white 70%, var(--accent) 15%);
-  }
-
-  input.search:active {
-    background-color: color-mix(in srgb, black 80%, var(--accent) 40%);
-  }
-
-  input.search:focus,
-  input.search:focus-within {
-    background-color: color-mix(in srgb, black 80%, var(--accent) 50%);
-  }
-
-  input.search.active {
-    background-color: color-mix(in srgb, black 80%, var(--accent) 100%);
-  }
-
-  div.results_list {
-    background-color: color-mix(in srgb, black 80%, var(--accent) 65%);
-  }
-
-  div.results_list:hover {
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  div.results {
-    background-color: color-mix(in srgb, black 80%, var(--accent) 50%);
   }
 }
