@@ -22,6 +22,7 @@ import Modal from "../../components/settings/modal.astro";
           Posts
         </div>
       </div>
+      <Modal/>
     </div>
     <div class="social-links">
       <div class="text">
@@ -30,7 +31,6 @@ import Modal from "../../components/settings/modal.astro";
       </a>
          Repo
       </div>
-      <Modal/>
       <div class="text">
         <a href="https://bsky.app/profile/bloom.swifties.social">
           <span class="material-symbols-outlined">post</span>
@@ -150,23 +150,6 @@ import Modal from "../../components/settings/modal.astro";
       align-items: center;
       width: 100%;
       gap: 2rem;
-    }
-
-    a {
-      transition: all 0.3s ease;
-    }
-
-    a:not(.active) {
-      position: relative;
-      transform: translateY(5px);
-    }
-
-    a:not(.active) ~ .text {
-      opacity: 0;
-    }
-
-    a.active .text {
-      opacity: 1;
     }
 
     .social-links,

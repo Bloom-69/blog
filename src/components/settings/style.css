@@ -38,8 +38,8 @@ button#close-modal {
     justify-content: center;
     background-color: transparent;
     color: var(--md-sys-color-on-surface-container);
-    width: 44px;
-    height: 44px;
+    width: 2.5em;
+    height: 2.5em;
     padding: .3rem;
     border: none;
     border-radius: 999px;
@@ -62,12 +62,13 @@ button#close-modal:hover {
     justify-content: center;
     background-color: rgba(0, 0, 0, .4);
 }
-.setting-modal > * {
+
+.setting-modal>* {
     margin-top: 1rem;
     color: var(--md-sys-color-on-surface-container);
 }
 
-.setting-modal > *:first-child {
+.setting-modal>*:first-child {
     margin-top: 0;
 }
 
@@ -103,15 +104,16 @@ button#close-modal:hover {
     top: 0;
     display: flex;
     justify-content: space-between;
-    height: 3rem;
-    align-items: center;
+    height: fit-content;
+    align-items: baseline;
     padding: 1rem;
     margin: 0;
     background-color: var(--md-sys-color-surface-container);
 }
 
-.toolbar > h1 {
+.toolbar>h1 {
     font-size: 1.5em;
+    margin-bottom: 0;
 }
 
 .modal-base.hide {
@@ -124,35 +126,46 @@ button#close-modal:hover {
     gap: .5rem;
 }
 
-.theme-s-default {
-    background-color: rgb(142 77 48);
+.themes-colors {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+
+.theme-s {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 54px;
     height: 54px;
+    color: inherit;
+}
+
+.theme-s-default {
+    background-color: rgb(142 77 48);
     border: none;
     border-radius: 9999px;
 }
 
 .theme-s-blue {
     background-color: rgb(33 100 135);
-    width: 54px;
-    height: 54px;
     border: none;
-    border-radius: 9999px; 
+    border-radius: 9999px;
 }
 
 .btn {
     transition: box-shadow 300ms ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background-color: var(--md-sys-color-primary);
-        color: var(--md-sys-color-on-primary);
-        border: none;
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        border-radius: 999px;
-        cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
 }
 
 .btn.primary {
@@ -160,7 +173,8 @@ button#close-modal:hover {
 }
 
 .btn.mc {
-    background-color: rgb(108 50 24);;
+    background-color: rgb(108 50 24);
+    ;
 }
 
 .btn.hc {

@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/layouts/BaseHead.astro';
-import Header from '../components/layouts/Header.astro';
-import FormattedDate from '../components/layouts/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/layouts/BaseHead.astro";
+import Header from "../components/layouts/Header.astro";
+import FormattedDate from "../components/layouts/FormattedDate.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
@@ -18,19 +18,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				padding-inline: 0;
 				padding-top: 0;
 			}
+			.flex-ahh-image {
+				padding: .5rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 100%;
+			}
 			.hero-image {
 				width: 100%;
 			}
 			.hero-image img {
 				display: block;
-				border-radius: 0;
+				width: 100%;
+				image-rendering: optimizeSpeed;
+				height: calc(100% / 2);
+				background-color: var(--md-sys-color-surface-variant);
+				border-radius: 18px;
 			}
 			.prose {
 				width: 820px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: color-mix(in srgb, black 90%, var(--accent) 10%);
+				color: var(--md-sys-color-on-background);
 			}
 			.title {
 				margin-bottom: 1em;
@@ -43,32 +54,14 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 			.date {
 				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--md-sys-color-on-background);
 			}
 			.last-updated-on {
 				font-style: italic;
 			}
 
-			h4.quote{
-				color: color-mix(in srgb, black 60%, var(--accent) 20%);
-			}
-
-			@media (prefers-color-scheme: dark) {
-				.hero-image img {
-					box-shadow: none;
-				}
-
-				.prose {
-					color: color-mix(in srgb, white 90%, var(--accent) 10%);
-				}
-
-				.date {
-					color: color-mix(in srgb, white 90%, var(--accent) 10%);
-				}
-
-				h4.quote {
-					color: color-mix(in srgb, white 60%, var(--accent) 20%);
-				}
+			h4.quote {
+				color: var(--md-sys-color-background);
 			}
 		</style>
 	</head>
@@ -77,9 +70,21 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main transition:animate="fade">
 			<article>
-				<div class="hero-image">
-					{heroImage && <img data-background-image={heroImage} loading="lazy" src={heroImage} alt="" />}
+				<div class="flex-ahh-image">
+					<div class="hero-image">
+						{
+							heroImage && (
+								<img
+									data-background-image={heroImage}
+									loading="lazy"
+									src={heroImage}
+									alt=""
+								/>
+							)
+						}
+					</div>
 				</div>
+
 				<div class="prose">
 					<div class="title">
 						<div class="date">
@@ -87,7 +92,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							{
 								updatedDate && (
 									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
+										Last updated on{" "}
+										<FormattedDate date={updatedDate} />
 									</div>
 								)
 							}
